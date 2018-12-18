@@ -4,39 +4,75 @@
   "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
   "entities": [
     {
-      "id": "1:5422689586951659214",
-      "lastPropertyId": "4:6429230481114742721",
-      "name": "Note",
+      "id": "2:5118687025163681190",
+      "lastPropertyId": "4:802908818824469426",
+      "name": "Person",
       "properties": [
         {
-          "id": "1:3321236343233353749",
+          "id": "1:3477503468618026995",
           "name": "id"
         },
         {
-          "id": "2:294061155305062550",
-          "name": "text"
+          "id": "2:6707855383983967716",
+          "name": "name"
         },
         {
-          "id": "3:6669512453848314841",
-          "name": "comment"
+          "id": "3:8364046650406416273",
+          "name": "age"
         },
         {
-          "id": "4:6429230481114742721",
-          "name": "date"
+          "id": "4:802908818824469426",
+          "name": "birthday"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:6132622972892242674",
+      "lastPropertyId": "1:8121691054706701218",
+      "name": "Customer",
+      "properties": [
+        {
+          "id": "1:8121691054706701218",
+          "name": "id"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "4:4032606221731622304",
+      "lastPropertyId": "2:7368636349134477020",
+      "name": "Order",
+      "properties": [
+        {
+          "id": "1:6320926856238560105",
+          "name": "id"
+        },
+        {
+          "id": "2:7368636349134477020",
+          "indexId": "1:3454057911407538663",
+          "name": "customerId"
         }
       ],
       "relations": []
     }
   ],
-  "lastEntityId": "1:5422689586951659214",
-  "lastIndexId": "0:0",
+  "lastEntityId": "4:4032606221731622304",
+  "lastIndexId": "1:3454057911407538663",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",
   "modelVersion": 4,
   "modelVersionParserMinimum": 4,
-  "retiredEntityUids": [],
+  "retiredEntityUids": [
+    5422689586951659214
+  ],
   "retiredIndexUids": [],
-  "retiredPropertyUids": [],
+  "retiredPropertyUids": [
+    3321236343233353749,
+    294061155305062550,
+    6669512453848314841,
+    6429230481114742721
+  ],
   "retiredRelationUids": [],
   "version": 1
 }

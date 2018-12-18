@@ -22,14 +22,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         tv_show = findViewById(R.id.tv_show)
-        personBox = ObjectBox.personInfo.boxFor()
-        personQuery = personBox.query { order(Person_.id) }
+        personBox = (application as App).boxStore!!.boxFor(Person::class)
+        personQuery = personBox.query {
+            equal(Person_.id, 1)
+            order(Person_.id)
+        }
         updateTv()
     }
 
     fun OnClicked(v: View) {
         when (v.id) {
-            R.id.bt_add -> {//设置为0会自动增长
+            R.id.bt_add -> {//设置为0 id会自动增长
                 val p = Person(0, "hzy", 1, Date())
                 personBox.put(p)
                 updateTv()
@@ -50,8 +53,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun updateTv() {
-        val person = personQuery.find()
-        Log.e("notes", person.toString())
-        tv_show.setText(person.toString());
+        var personlist:List<Person> = personQuery.find()
+        Log.e("notes", personlist.toString())
+        tv_show.setText(personlist.toString());
     }
 }

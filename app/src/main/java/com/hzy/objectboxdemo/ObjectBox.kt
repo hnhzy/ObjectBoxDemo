@@ -10,11 +10,11 @@ import java.io.File
  */
 object ObjectBox {
 
-    lateinit var personInfo: BoxStore
+    lateinit var boxStore: BoxStore
         private set
 
     fun build(context: Context) {
-        personInfo = MyObjectBox.builder().androidContext(context.applicationContext).build()
+        boxStore = MyObjectBox.builder().androidContext(context.applicationContext).build()
     }
 
 }
